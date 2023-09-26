@@ -27,6 +27,7 @@ const GTF: React.FC = () => {
   const [correctAnswer, setCorrectAnswer] = useState<boolean | null>(null);
 
   const game = useRef<HTMLDivElement>(null);
+  const submitButton = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
     axios
@@ -50,6 +51,13 @@ const GTF: React.FC = () => {
       nextFlag();
     }
   }, [correctAnswer]);
+
+  useEffect(() => {
+    document.addEventListener('keydown', keyPress);
+    return () => {
+      document.removeEventListener('keydown', keyPress);
+    };
+  }, []);
 
   const shuffleArrays = (flags: string[], names: string[], hints: string[]) => {
     const shuffledFlags = [...flags];
@@ -103,6 +111,15 @@ const GTF: React.FC = () => {
     setResponse(false);
   }
 
+  const keyPress = (e: { keyCode: number; preventDefault: () => void; }) => {
+    if (e.keyCode === 13) {
+      e.preventDefault(); 
+      if (submitButton.current) {
+        submitButton.current.click();
+      }
+    }
+  }
+
   return (
     <div className="gtf" ref={game}>
       <Title>GUESS THE FLAG</Title>
@@ -127,17 +144,16 @@ const GTF: React.FC = () => {
             value={userInput}
             onChange={handleInputChange}
           />
-          <button onClick={checkAnswer}>Submit</button>
+          <button ref={submitButton} type="submit" onClick={checkAnswer}>Submit</button>
         </div>
         <div className="gtf-response">
           {correctAnswer !== null ? (
             correctAnswer ? (
               <>
                 {nextFlag()}
-                <p>Bonne réponse</p>
               </>
             ) : (
-              <p>Mauvaise réponse</p>
+              null
             )
           ) : null}
         </div>
