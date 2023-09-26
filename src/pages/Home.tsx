@@ -1,9 +1,9 @@
-import GuessTheFlag from "../components/GuessTheFlag";
+import Navigation from "../components/Navigation";
 
 const Home = () => {
     return (
         <div className="game-container">
-            <GuessTheFlag />
+            <Navigation />
         </div>
     );
 };

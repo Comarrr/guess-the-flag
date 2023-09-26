@@ -14,7 +14,7 @@ interface CountryData {
   region: string;
 }
 
-const GuessTheFlag: React.FC = () => {
+const GTF: React.FC = () => {
 
   const [countriesData, setCountriesData] = useState<CountryData[]>([]);
   const [namesData, setNamesData] = useState<string[]>([]);
@@ -150,5 +150,5 @@ const GuessTheFlag: React.FC = () => {
   );
 };
 
-export default GuessTheFlag;
+export default GTF;
 
