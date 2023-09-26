@@ -1,0 +1,124 @@
+.gtf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    height: 100%;
+
+    .gtf-game {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    .gtf-flag img {
+        max-width: 100%;
+        max-height: 70vh;
+      }
+
+      .gtf-answer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        width: 100%;
+      }
+
+      .gtf-answer input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      .gtf-answer button {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 40px;
+      }
+
+      .gtf-response p {
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+
+      .gtf-response {
+        display: flex;
+        justify-content: center;
+        gap: 50%;
+        padding: 10px 0;
+        button {
+          cursor: pointer;
+          margin-top: 10px;
+          margin-right: 10px;
+          padding: 10px;
+          border-radius: 5px;
+        }
+      } 
+
+  }
+
+  .correct {
+    background-color: #419D78;
+}
+.false {
+    background-color: #C13F3C;
+}
+  
+  @media screen and (max-width: 768px) {
+    .gtf-flag img {
+      max-height: 50vh;
+    }
+  }
+
+  
+  
+  
+  
+  
+  
+
+/* .gtf {
+    height: 100%;
+}
+
+.gtf-game {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    .gtf-flag {
+        img {
+            width: 600px;
+        }
+    }
+
+    .gtf-answer {
+        display: flex;
+        flex-direction: column;
+
+        button {
+            cursor: pointer;
+            padding: 10px 40px;
+        }
+
+    }
+}
+
+.correct {
+    background-color: #419D78;
+}
+.false {
+    background-color: #C13F3C;
+} */
